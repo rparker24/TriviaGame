@@ -1,0 +1,24 @@
+body {
+	background: #fff url("images/hockey-background.jpg") no-repeat right top;
+}
+header, footer{
+	text-align: center;
+	color: #fff;
+}
+header {
+
+}
+footer {
+
+}
+h1 {
+
+}
+#content {
+	margin: 0 auto;
+	max-width: 1000px;
+	background-color: #fff;
+}
+#startButton {
+	text-align: center;
+}
