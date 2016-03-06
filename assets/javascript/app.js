@@ -1,5 +1,8 @@
 
+// not sure where this should run yet or if it is needed
+$(document).ready(function() {
 
+})
 
 
 
@@ -7,12 +10,12 @@
 var timer = {
   time:30,
   run: function(){
-    counter = setInterval(timer.increment, 1000);
+    counter = setInterval(timer.decrement, 1000);
   },
   stop: function(){
     clearInterval(counter);
   },
-  increment: function(){
+  decrement: function(){
     timer.time--
     $('#countdown').html(timer.time)
     if (timer.time === 0){
@@ -21,16 +24,15 @@ var timer = {
     }
   }
 }
+// make timer run on q1 div load
+// timer.run();
 
-timer.run();
+var $div = $('<div>' + timer.time + '</div>');
+var $q1 = $('<p>' + "Time Remaining: " + timer.time + '</p>');
 
-$div = $('<div>')
-$p = $('<p>' + "Time Remaining: " + )
 
-$(document).ready(function() {
-
-})
-
-$('#startButton').click(function() {
-  $('#content').html($div)
+$('#button').click(function() {
+  $('#content').html($div, $q1);
+  timer.time = 30;
+  timer.run();
 })
