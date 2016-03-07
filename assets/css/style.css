@@ -4,7 +4,7 @@ body {
 }
 header, footer{
 	text-align: center;
-	color: #fff;
+	color: #ff0101;
 }
 header {
 
@@ -20,9 +20,8 @@ h1 {
 	font-family: Verdana, arial, sans-serif;
 	font-size: 36px;
 }
-button {
+button, #playAgain {
 	background-color: green;
-	border: none;
 	font-size: 25px;
 	margin-top: 175px;
 	font-weight: bold;
@@ -64,4 +63,8 @@ button {
 	padding: 5px 0px 5px 0px;
 	max-width: 550px;
 	margin: 20px auto;
+}
+.correct img, .wrong img {
+	width: 300px;
+	height: 300px;
 }
