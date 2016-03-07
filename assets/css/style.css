@@ -37,6 +37,8 @@ button {
 	max-width: 1000px;
 	height: 450px;
 	text-align: center;
+	border: 2px solid #000;
+	border-radius: 100px;
 }
 #startButton {
 	text-align: center;
@@ -50,7 +52,16 @@ button {
 	margin: 20px auto;
 	font-size: 18px;
 	background-color: beige;
+	padding: 5px 0px 5px 0px;
 }
 .incorrect {
 	color: red;
+}
+.question {
+	border: 1px solid #000;
+	font-size: 20px;
+	background-color: beige;
+	padding: 5px 0px 5px 0px;
+	max-width: 550px;
+	margin: 20px auto;
 }
