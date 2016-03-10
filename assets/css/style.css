@@ -53,9 +53,6 @@ button, #playAgain {
 	background-color: beige;
 	padding: 5px 0px 5px 0px;
 }
-.incorrect {
-	color: red;
-}
 .question {
 	border: 1px solid #000;
 	font-size: 20px;
