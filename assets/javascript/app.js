@@ -12,6 +12,7 @@ var timer = {
     $('#countdown').html(timer.time);
     if (timer.time === 0){
       timer.stop();
+      $('#content').html($timeIsUp);
     }
   }
 }
@@ -21,6 +22,18 @@ var numWrong = 0;
 
 // display the remaining time for each question
 var $timerDisplay = $('<p id="timeRemaining">' + "Time Remaining: " + '<span id="countdown">' + '</span>' + " Seconds" + '</p>');
+
+var $timeIsUp = $('<h2>Time Is Up!</h2>' + '<button id="playAgain" class="button">' + 'Play Again' + '</button>');
+
+// var q1 = {
+//   question: {
+//     number: 1,
+//     text: 'What material are hockey pucks made of?'
+//   },
+//   choices: {
+//
+//   }
+// }
 
 // create variables for each question div that can be inserted into the #content div
 var $q1 = $('<div class="qAndA">' + '<p class="question">' + '1. What material are hockey pucks made of?' + '</p>' + '<br>' + '<p class="answer1 incorrect">' + 'Plastic' + '</p>' + '<p class="answer1 correct">' + 'Rubber' + '</p>' + '<p class="answer1 incorrect">' + 'Wood' + '</p>' + '<p class="answer1 incorrect">' + 'Charcoal' + '</p>');
@@ -48,10 +61,12 @@ var $q5Wrong = $('<div class="wrong">' + '<h2>' + 'Wrong!' + '</h2>' + '<h4>' + 
 // var questions = [$q1, $q2, $q3, $q4, $q5];
 // var answers = [[$q1Correct, $q1Wrong], [$q2Correct, $q2Wrong], [$q3Correct, $q3Wrong], [$q4Correct, $q4Wrong], [$q5Correct, $q5Wrong]];
 
-var $results = $('<div id="results">' + '<h3>' + 'Correct Answers: ' +numCorrect+ '</h3>' + '<h3>' + 'Incorrect Answers: ' +numWrong+ '</h3>' + '<p id="playAgain">' + 'Play Again' + '</p>' +'</div>');
+// better idea than above - use objects to store question and answer data
+
+var $results = $('<div id="results">' + '<h3>' + 'Correct Answers: ' + '<span id="numCorrect"></span>' + '</h3>' + '<h3>' + 'Incorrect Answers: ' + '<span id="numWrong"></span>' + '</h3>' + '<form>' + '<button id="playAgain" class="button" type="submit">' + 'Play Again' + '</button>' + '</form>' + '</div>');
 
 // when start button is clicked
-$('#button').on('click', function() {
+$(document).on('click', '#startButton', function() {
   $('#content').html($timerDisplay);
   $('#content').append($q1);
   timer.time = 30;
@@ -67,6 +82,7 @@ $(document).on('click', '.answer1', function() {
     $('#content').append($q2);
     timer.time = 30;
     timer.run();
+    clickedClass = null;
   };
   function loadQ2() {
     counter1 = setTimeout(load2, 3000);
@@ -92,6 +108,7 @@ $(document).on('click', '.answer2', function() {
     $('#content').append($q3);
     timer.time = 30;
     timer.run();
+    clickedClass = null;
   };
   function loadQ3() {
     counter2 = setTimeout(load3, 3000);
@@ -115,6 +132,7 @@ $(document).on('click', '.answer3', function() {
     $('#content').append($q4);
     timer.time = 30;
     timer.run();
+    clickedClass = null;
   };
   function loadQ4() {
     counter3 = setTimeout(load4, 3000);
@@ -138,6 +156,7 @@ $(document).on('click', '.answer4', function() {
     $('#content').append($q5);
     timer.time = 30;
     timer.run();
+    clickedClass = null;
   };
   function loadQ5() {
     counter4 = setTimeout(load5, 3000);
@@ -156,8 +175,11 @@ $(document).on('click', '.answer4', function() {
 });
 $(document).on('click', '.answer5', function() {
   clickedClass = $(this).attr("class");
-  function loadResults() {  
+  function loadResults() {
     $('#content').html($results);
+    $('#numCorrect').html(numCorrect);
+    $('#numWrong').html(numWrong);
+    clickedClass = null;
   };
   function loadEnd() {
     counter5 = setTimeout(loadResults, 3000);

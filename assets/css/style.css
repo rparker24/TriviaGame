@@ -2,24 +2,30 @@ body {
 	background: #fff url("images/hockey-background.jpg") no-repeat right top;
 	background-size: cover;
 }
+
 header, footer{
 	text-align: center;
 	color: #ff0101;
 }
-header {
 
-}
+/*header {
+
+}*/
+
 footer {
 	bottom: 0;
 	margin-top: 80px;
 }
+
 footer p {
 	text-align: center;
 }
+
 h1 {
 	font-family: Verdana, arial, sans-serif;
 	font-size: 36px;
 }
+
 button, #playAgain {
 	background-color: green;
 	font-size: 25px;
@@ -29,6 +35,7 @@ button, #playAgain {
 	border: 1px solid #000;
 	padding: 10px 50px 10px 50px;
 }
+
 #content {
 	background: #fff url("images/gretzky1.jpg");
 	background-repeat: no-repeat;
@@ -39,12 +46,14 @@ button, #playAgain {
 	border: 2px solid #000;
 	border-radius: 100px;
 }
+
 #startButton, #results {
 	text-align: center;
 	max-width: 300px;
 	min-height: 50px;
 	margin: 0 auto;
 }
+
 .answer1, .answer2, .answer3, .answer4, .answer5 {
 	width: 300px;
 	border: 1px solid #000;
@@ -53,14 +62,17 @@ button, #playAgain {
 	background-color: beige;
 	padding: 5px 0px 5px 0px;
 }
+
 .question {
 	border: 1px solid #000;
 	font-size: 20px;
 	background-color: beige;
-	padding: 5px 0px 5px 0px;
+	padding: 5px 10px 5px 10px;
 	max-width: 550px;
+	display: inline-block;
 	margin: 20px auto;
 }
+
 .correct img, .wrong img {
 	width: 300px;
 	height: 300px;
